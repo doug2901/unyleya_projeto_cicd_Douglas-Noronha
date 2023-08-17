@@ -99,3 +99,10 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#Terraform
+Terraform/.terraform/
+Terraform/.Terraform/
+Terraform/*.hcl
+Terraform/terraform.tfstate
+Terraform/terraform.tfstate.backup
