@@ -1,0 +1,34 @@
+{{ if eq .Values.Deployment.enabled true }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Values.Namespace.name }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  {{- with .Values.container }}
+  replicas: {{ .replicas }}
+  selector:
+    matchLabels:
+      app: {{ $.Release.Name }}
+  template:
+    metadata:
+      name: {{ $.Release.Name }}
+      labels:
+        app: {{ $.Release.Name }}
+    spec:
+      containers:
+      - name: {{ $.Release.Name }}
+        image: {{ .image }}
+        resources:
+          requests:
+            memory: {{ .resources.request.memory | quote }}
+            cpu: {{ quote .resources.request.cpu }}
+          limits:
+            memory: {{ quote .resources.limits.memory }}
+            cpu: {{ quote .resources.limits.cpu }}
+        ports:
+        - containerPort: {{ .port }}
+  {{- end }}
+{{- end }}        
