@@ -1,0 +1,27 @@
+Namespace:
+  name: dev
+Deployment:
+  enabled: true
+container:
+  replicas: 1
+  #Rlease Name azure-vote-back
+  image: doug2901/redis:6.0.8
+  port: 6379
+
+#Rlease Name azure-vote-back
+services:
+  enabled: true
+  port: 6379
+#  targetPort: 5000
+#  nodePort: 30000
+#  type: LoadBalancer
+hpa:
+  enabled: false
+  minReplicas:
+  maxReplicas:
+  targetCPUUtilizationPercentage:
+
+#helm install --debug  azure-vote-back ./vote --values azure-vote-back-Helm_values.yaml
+#helm install azure-vote-back voto/vote --values azure-vote-back-Helm_values.yaml
+#helm repo add voto https://doug2901.github.io/helm-charts
+#helm repo list

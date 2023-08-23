@@ -1,0 +1,27 @@
+Namespace:
+  name: dev
+Deployment:
+  enabled: true
+container:
+  replicas: 1
+  #Rlease Name azure-vote-front
+  image: doug2901/azure-vote-front:v1
+  port: 80
+
+#Rlease Name azure-vote-front
+services:
+  enabled: true
+  port: 80
+#  targetPort: 5000
+#  nodePort: 30000
+  type: LoadBalancer
+hpa:
+  enabled: false
+  minReplicas:
+  maxReplicas:
+  targetCPUUtilizationPercentage:
+
+#helm install --debug  azure-vote-front ./vote --values azure-vote-front-Helm_values.yaml
+#helm install azure-vote-back voto/vote --values azure-vote-front-Helm_values.yaml
+#helm repo add voto https://doug2901.github.io/helm-charts
+#helm repo list
