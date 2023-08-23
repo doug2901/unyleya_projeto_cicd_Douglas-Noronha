@@ -22,6 +22,6 @@ hpa:
   targetCPUUtilizationPercentage:
 
 #helm install --debug  azure-vote-front ./vote --values azure-vote-front-Helm_values.yaml
-#helm install azure-vote-back voto/vote --values azure-vote-front-Helm_values.yaml
+#helm install azure-vote-front voto/vote --values azure-vote-front-Helm_values.yaml
 #helm repo add voto https://doug2901.github.io/helm-charts
 #helm repo list
