@@ -29,5 +29,7 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/azure-vote/Dockerfile'
+        containerRegistry: docker.io
+        repository: doug2901/azure-vote-front
         tags: |
           $(tag)
