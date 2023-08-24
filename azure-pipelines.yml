@@ -32,5 +32,6 @@ stages:
         containerRegistry: dockerhub
         repository: 'doug2901/azure-vote-front'
         tags: |
-          $(tag)
+          '$(tag)'
+    
           
