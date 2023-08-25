@@ -35,8 +35,6 @@ stages:
           $(tag)
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: '$(Build.SourcesDirectory)/azure-vote/Dockerfile'
+        PathtoPublish: '$(Build.SourcesDirectory)/vote'
         ArtifactName: 'drop'
         publishLocation: 'Container'
-    
-          
