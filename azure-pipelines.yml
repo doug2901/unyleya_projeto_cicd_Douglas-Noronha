@@ -33,5 +33,10 @@ stages:
         repository: azure-vote-front
         tags: |
           $(tag)
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.SourcesDirectory)/azure-vote/Dockerfile'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
     
           
