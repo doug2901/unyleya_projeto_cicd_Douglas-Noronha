@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: {{ $.Release.Name }}
-        image: doug2901/azure-vote-front:{{ .tag }}
+        image: unyleyaacr.azurecr.io/azure-vote-front:{{ .tag }}
         env:
         - name: ALLOW_EMPTY_PASSWORD
           value: "yes"

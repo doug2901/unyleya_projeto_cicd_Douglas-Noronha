@@ -15,7 +15,7 @@ spec:
     spec:      
       containers:
       - name: azure-vote-back
-        image: doug2901/redis:6.0.8
+        image: unyleyaacr.azurecr.io/redis:6.0.8
         env:
         - name: ALLOW_EMPTY_PASSWORD
           value: "yes"
