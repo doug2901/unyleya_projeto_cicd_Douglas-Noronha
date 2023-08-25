@@ -1,11 +1,11 @@
 Namespace:
-  name: dev
+  name: default
 Deployment:
   enabled: true
 container:
   replicas: 1
   #Rlease Name azure-vote-front
-#  image: doug2901/azure-vote-front:v1
+  tag: v1
   port: 80
 
 #Rlease Name azure-vote-front
