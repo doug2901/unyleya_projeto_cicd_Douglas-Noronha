@@ -28,10 +28,13 @@ stages:
       displayName: Build an image
       inputs:
         command: buildAndPush
-        dockerfile: '$(Build.SourcesDirectory)/azure-vote/Dockerfile'
-        containerRegistry: dockerhub
-        repository: 'doug2901/azure-vote-front'
+        dockerfile: $(Build.SourcesDirectory)/azure-vote/Dockerfile
+        containerRegistry: ACR
+        repository: azure-vote-front
         tags: |
           $(tag)
-    
-          
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.SourcesDirectory)/vote'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
