@@ -1,5 +1,2 @@
-teste1
-teste2
-teste3
-teste4
-teste5
+Faculdade Unyleya - Modulo 7 Atividade da Unidade 4
+Teste de pipeline CI/CD Azure DevOps
